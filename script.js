@@ -60,7 +60,7 @@ function generatePassword() {
   //Array to contain one of each type of chosen character to ensure each will be used
   var autogenCharacters = [];
 
-  //Conditional statements that add array of each type of character into array of possible characters based on user input and pushes new random character to guaranteedCharacters.
+  //Conditional statements that add array of each type of character into array of possible characters based on user inputs 
   if (hascharacters) {
     selectedCharacters = selectedCharacters.concat(characters);
     autogenCharacters.push(
@@ -97,7 +97,7 @@ function generatePassword() {
     randomCharacters.push(selectedCharacters[index]);
   }
   var replacedPosition = {};
-  //While loop to ensure an index position that has already been replaced with a guaranteed character 
+  //While loop to ensure an index position that has already been replaced with a auto generated chosen character 
   while (autogenCharacters.length > 0) {
     var replaceCharacters = Math.floor(Math.random() * randomCharacters.length);
     if (!replacedPosition[replaceCharacters]) {
@@ -107,7 +107,7 @@ function generatePassword() {
   }
   return randomCharacters.join("");
 }
-// Write password to the #password input
+// Write password for the input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
